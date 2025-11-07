@@ -1,9 +1,39 @@
 @import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-/* فقط وقتی کلاس dark هست، تم تاریک بشه */
-html.dark {
-  color-scheme: dark;
+:root {
+  --color-bg: #f0f4ff;
+  --color-card: #ffffff;
+  --color-text: #1e293b;
+  --color-border: #cbd5e1;
+  --color-accent: #3b82f6;
+  --color-hover: #e0e7ff;
 }
-html:not(.dark) {
-  color-scheme: light;
+
+.dark {
+  --color-bg: #111827;
+  --color-card: #1f2937;
+  --color-text: #f1f5f9;
+  --color-border: #374151;
+  --color-accent: #fbbf24;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.card {
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  background-color: var(--color-hover);
 }
